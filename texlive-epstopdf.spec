@@ -14,6 +14,8 @@ Provides:	texlive-epstopdf.bin = %{EVRD}
 Conflicts:	texlive-texmf <= 20110705-3
 Conflicts:	texlive-doc <= 20110705-3
 
+Patch0:		texlive-epstopdf.patch
+
 %description
 Epstopdf is a Perl script that converts an EPS file to an
 'encapsulated' PDF file (a single page file whose media box is
@@ -58,6 +60,8 @@ graphic files.
 #-----------------------------------------------------------------------
 %prep
 %setup -c -a0 -a1
+
+%patch0 -p1
 
 %build
 
