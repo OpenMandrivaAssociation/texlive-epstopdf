@@ -6,7 +6,7 @@
 # catalog-version 2.16
 Name:		texlive-epstopdf
 Version:	2.16
-Release:	1
+Release:	2
 Summary:	Convert EPS to 'encapsulated' PDF using GhostScript
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/support/epstopdf
