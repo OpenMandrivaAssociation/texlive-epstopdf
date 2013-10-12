@@ -1,16 +1,17 @@
-# revision 26577
+# revision 31789
 # category Package
-# catalog-ctan undef
-# catalog-date undef
-# catalog-license undef
-# catalog-version undef
+# catalog-ctan /support/epstopdf
+# catalog-date 2013-09-28 07:56:59 +0200
+# catalog-license other-free
+# catalog-version 2.20
 Name:		texlive-epstopdf
-Version:	20120807
+Epoch:		1
+Version:	2.20
 Release:	1
-Summary:	TeXLive epstopdf package
+Summary:	Convert EPS to 'encapsulated' PDF using GhostScript
 Group:		Publishing
-URL:		http://tug.org/texlive
-License:	http://www.tug.org/texlive/LICENSE.TL
+URL:		http://www.ctan.org/tex-archive/support/epstopdf
+License:	OTHER-FREE
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/epstopdf.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/epstopdf.doc.tar.xz
 BuildArch:	noarch
@@ -20,7 +21,18 @@ Requires(post):	texlive-kpathsea
 Provides:	texlive-epstopdf.bin = %{EVRD}
 
 %description
-TeXLive epstopdf package.
+Epstopdf is a Perl script that converts an EPS file to an
+'encapsulated' PDF file (a single page file whose media box is
+the same as the original EPS's bounding box). The resulting
+file suitable for inclusion by PDFTeX as an image. The script
+is adapted to run both on Windows and on Unix-alike systems.
+The script makes use of Ghostscript for the actual conversion
+to PDF. It assumes Ghostscript version 6.51 or later, and (by
+default) suppresses its automatic rotation of pages where most
+of the text is not horizontal. LaTeX users may make use of the
+epstopdf package, which will run the epstopdf script "on the
+fly", thus giving the illusion that PDFLaTeX is accepting EPS
+graphic files.
 
 %post
     %{_sbindir}/texlive.post
@@ -35,11 +47,11 @@ TeXLive epstopdf package.
 %{_bindir}/epstopdf
 %{_bindir}/repstopdf
 %{_texmfdistdir}/scripts/epstopdf/epstopdf.pl
-%doc %{_texmfdistdir}/doc/support/epstopdf/README
 %doc %{_mandir}/man1/epstopdf.1*
-%doc %{_texmfdir}/doc/man/man1/epstopdf.man1.pdf
+%doc %{_texmfdistdir}/doc/man/man1/epstopdf.man1.pdf
 %doc %{_mandir}/man1/repstopdf.1*
-%doc %{_texmfdir}/doc/man/man1/repstopdf.man1.pdf
+%doc %{_texmfdistdir}/doc/man/man1/repstopdf.man1.pdf
+%doc %{_texmfdistdir}/doc/support/epstopdf/README
 
 #-----------------------------------------------------------------------
 %prep
@@ -54,25 +66,6 @@ pushd %{buildroot}%{_bindir}
     ln -sf epstopdf repstopdf
 popd
 mkdir -p %{buildroot}%{_datadir}
-cp -fpar texmf texmf-dist %{buildroot}%{_datadir}
+cp -fpar texmf-dist %{buildroot}%{_datadir}
 mkdir -p %{buildroot}%{_mandir}/man1
-mv %{buildroot}%{_texmfdir}/doc/man/man1/*.1 %{buildroot}%{_mandir}/man1
-
-
-%changelog
-* Tue Aug 07 2012 Paulo Andrade <pcpa@mandriva.com.br> 20120807-1
-+ Revision: 812250
-- Update to latest release.
-
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 2.16-2
-+ Revision: 751535
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 2.16-1
-+ Revision: 718354
-- texlive-epstopdf
-- texlive-epstopdf
-- texlive-epstopdf
-- texlive-epstopdf
-- texlive-epstopdf
-
+mv %{buildroot}%{_texmfdistdir}/doc/man/man1/*.1 %{buildroot}%{_mandir}/man1
