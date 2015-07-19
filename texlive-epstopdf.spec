@@ -7,7 +7,7 @@
 Name:		texlive-epstopdf
 Epoch:		1
 Version:	2.21
-Release:	4
+Release:	5
 Summary:	Convert EPS to 'encapsulated' PDF using GhostScript
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/support/epstopdf
