@@ -1,9 +1,3 @@
-# revision 32706
-# category Package
-# catalog-ctan /support/epstopdf
-# catalog-date 2014-01-17 20:40:07 +0100
-# catalog-license other-free
-# catalog-version 2.21
 Name:		texlive-epstopdf
 Epoch:		1
 Version:	2.27
@@ -46,12 +40,12 @@ graphic files.
 %files
 %{_bindir}/epstopdf
 %{_bindir}/repstopdf
-%{_texmfdistdir}/scripts/epstopdf/epstopdf.pl
+%{_texmfdistdir}/scripts/epstopdf
 %doc %{_mandir}/man1/epstopdf.1*
 %doc %{_texmfdistdir}/doc/man/man1/epstopdf.man1.pdf
 %doc %{_mandir}/man1/repstopdf.1*
 %doc %{_texmfdistdir}/doc/man/man1/repstopdf.man1.pdf
-%doc %{_texmfdistdir}/doc/support/epstopdf/README
+%doc %{_texmfdistdir}/doc/support/epstopdf
 
 #-----------------------------------------------------------------------
 %prep
