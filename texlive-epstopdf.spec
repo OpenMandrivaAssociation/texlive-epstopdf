@@ -1,13 +1,13 @@
 Name:		texlive-epstopdf
 Epoch:		1
-Version:	2.28
+Version:	64439
 Release:	1
 Summary:	Convert EPS to 'encapsulated' PDF using GhostScript
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/support/epstopdf
 License:	OTHER-FREE
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/epstopdf.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/epstopdf.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/epstopdf.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/epstopdf.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -29,12 +29,12 @@ fly", thus giving the illusion that PDFLaTeX is accepting EPS
 graphic files.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -49,15 +49,15 @@ graphic files.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_bindir}
 pushd %{buildroot}%{_bindir}
-    ln -sf %{_texmfdistdir}/scripts/epstopdf/epstopdf.pl epstopdf
-    ln -sf epstopdf repstopdf
+ln -sf %{_texmfdistdir}/scripts/epstopdf/epstopdf.pl epstopdf
+ln -sf epstopdf repstopdf
 popd
 mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf-dist %{buildroot}%{_datadir}
