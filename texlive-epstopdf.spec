@@ -1,6 +1,6 @@
 Name:		texlive-epstopdf
 Epoch:		1
-Version:	71612
+Version:	71782
 Release:	1
 Summary:	Convert EPS to 'encapsulated' PDF using GhostScript
 Group:		Publishing
