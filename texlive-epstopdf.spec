@@ -4,7 +4,7 @@ Version:	71782
 Release:	1
 Summary:	Convert EPS to 'encapsulated' PDF using GhostScript
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/support/epstopdf
+URL:		https://www.ctan.org/tex-archive/support/epstopdf
 License:	OTHER-FREE
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/epstopdf.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/epstopdf.doc.r%{version}.tar.xz
